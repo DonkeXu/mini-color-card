@@ -1,15 +1,41 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container" wx:if="{{!cropvisible}}">
   <!-- <image wx:if="{{imgPath}}" src='{{imgPath}}' mode='widthFix' class='target'></image> -->
   <view wx:if="{{!imgPath}}" class='img-placeholder' bindtap='chooseImg'>
     <image class='icon-add' src='/res/add.svg'></image>
   </view>
-  <canvas wx:if="{{imgPath}}" id='image-handler' style='{{"width:"+canvasWidth+"px;height:"+canvasHeight+"px;"}}' canvas-id="imageHandler" bindtap='chooseImg'></canvas>
+
+  <!--  image to indicate the dot of touch -->
+  <!-- <view class="imgWrap">
+    <image src='/res/locate.png' data-id='0' style='width:16px;height:16px;' 
+          bindtouchstart='WraptouchStart'  bindtouchmove='WraptouchMove' bindtouchend='WraptouchEnd'></image>
+  </view> -->
+  <canvas class="canvas" wx:if="{{imgPath}}" id='image-handler' 
+          style='{{"width:"+canvasWidth+"px;height:"+canvasHeight+"px;"}}' 
+          canvas-id="imageHandler" bindtap='tap'></canvas>
   <view wx:if="{{state !== 1}}" class='colors-container' style='{{"width:"+colors.length * 40 + "px;"}}' bindtap='edit'>
     <view wx:for="{{colors}}" wx:key="{{item}}" class='color' style='{{"background-color:"+item}}'></view>
   </view>
   <view wx:if="{{state !== 1}}" class='button-container'>
     <view class='primary-button' bindtap='save'>保存</view>
     <view class='primary-button' bindtap='edit'>调色</view>
+    <view class='primary-button' bindtap='editImage'>编辑图片</view>
+    <view class='primary-button' bindtap='chooseImg'>选图片</view>
+    <!-- <view style="colr"></view> -->
   </view>
+</view>
+
+
+
+<!-- 
+bindcropUpload 选取裁剪图片自定义事件；
+bindcropClose 裁剪组件关闭自定义事件；
+bindcropCrop 图片裁剪完成自定义事件。 
+-->
+
+<view class="test2">
+  <simple-crop wx:if="{{cropvisible}}" size="{{cropsize}}" src="{{cropsrc}}" cropSizePercent="{{cropSizePercent}}" 
+              borderColor="{{borderColor}}" bindcropUpload="uploadCallback" bindcropClose="closeCallback" 
+              bindcropCrop="cropCallback"></simple-crop>
+  <image mode="widthFix" src="{{cropresult}}"></image>
 </view>

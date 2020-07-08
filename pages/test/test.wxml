@@ -1,0 +1,19 @@
+<!--pages/test.wxml-->
+<!-- <text>pages/test.wxml</text> -->
+<!-- <canvas style="width:100%; height:300px;" id="myCanvas" canvas-id="myCanvas"></canvas>
+<view>
+  <button>画图</button>
+  <button>画图</button>
+</view> -->
+<view class="test2">
+  <simple-crop wx:if="{{visible}}" size="{{size}}" src="{{src}}" cropSizePercent="{{cropSizePercent}}" 
+              borderColor="{{borderColor}}" bindcropUpload="uploadCallback" bindcropClose="closeCallback" 
+              bindcropCrop="cropCallback"></simple-crop>
+  <image mode="widthFix" src="{{result}}"></image>
+</view>
+
+<button bindtap="chooseCropImage">选取裁剪图片</button>
+<button bindtap="updateComponnet">组件更新</button>
+
+
+<image src="{{newImg}}"></image>

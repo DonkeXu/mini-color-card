@@ -1,0 +1,4 @@
+/* pages/test.wxss */
+.color{
+  color: #0ac864;
+}

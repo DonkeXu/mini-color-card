@@ -11,9 +11,9 @@
     </view>
   </view>
   <view class="slider-container" wx:key="{{index}}" wx:for="{{blendent.colors}}" wx:if="{{blendent.colors && selected === index}}">
-    <van-slider class="red" style='width:90%;' value="{{r*100/255}}" bind:change="onChange" data-type="r" min="0" max="100" />
+    <!-- <van-slider class="red" style='width:90%;' value="{{r*100/255}}" bind:change="onChange" data-type="r" min="0" max="100" />
     <van-slider class='green' style='width:90%;' value="{{g/255*100}}" bind:change="onChange" data-type="g" min="0" max="100" />
-    <van-slider class='yellow' style='width:90%;' value="{{b/255*100}}" bind:change="onChange" data-type="b" min="0" max="100" />
+    <van-slider class='yellow' style='width:90%;' value="{{b/255*100}}" bind:change="onChange" data-type="b" min="0" max="100" /> -->
   </view>
   <view wx:if="{{blendent.colors}}" class='button-container'>
     <view class='primary-button' bindtap='save'>保存</view>

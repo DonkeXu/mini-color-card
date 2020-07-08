@@ -3,12 +3,14 @@
     "pages/index/index",
     "pages/self/self",
     "pages/square/square",
+    "pages/test/test",
     "pages/edit/edit"
   ],
   "tabBar": {
     "selectedColor": "#1296db",
     "backgroundColor": "#fff",
     "list": [
+      
       {
         "pagePath": "pages/index/index",
         "iconPath": "res/tab-index.png",
@@ -34,5 +36,6 @@
     "navigationBarBackgroundColor": "#1296db",
     "navigationBarTitleText": "小色卡",
     "navigationBarTextStyle": "white"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

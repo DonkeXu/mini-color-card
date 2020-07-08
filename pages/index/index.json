@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "van-button": "vant-weapp/button/index",
-    "van-slider": "vant-weapp/slider/index"
+    "van-button": "/vant-weapp/button/index",
+    "van-slider": "/vant-weapp/slider/index",
+    "simple-crop": "../../simple-crop/index"
   }
 }
